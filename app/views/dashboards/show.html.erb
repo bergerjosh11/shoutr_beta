@@ -1,0 +1,21 @@
+<h1><%= current_user.username %>'s Dashboard</h1>
+
+<%= render "applications/followers" %>
+
+<%= form_for @text_shout do |f| %>
+  <%= f.label :body, "Shout here:" %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>
+
+<%= form_for @photo_shout do |f| %>
+  <%= f.label :url, "Pictcha Shout Here:" %>
+  <%= f.text_field :url %>
+  <%= f.submit %>
+<% end %>
+
+<h2> Timeline </h2>
+
+<%= render @shouts %>
+<%= paginate @shouts %>
+
